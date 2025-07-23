@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import OlaMundo from "./Pages/OlaMundo";
+import Tabela from "./Pages/Tabela";
+
+function Home() {
+  return (
+    <>
+      <OlaMundo />
+      <Tabela />
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/OlaMundo" element={<OlaMundo />} />
+          <Route path="/Tabela" element={<Tabela />} />
+        </Routes>
+        
+      </Router>
+      
+
+
+
+
     </div>
   );
 }
